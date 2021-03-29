@@ -1,0 +1,11 @@
+.navbar {
+    height:4rem;
+    background-color: white;
+    box-shadow: 1px -3px 8px 1px darkgray;
+    display: flex;
+    align-items: center;
+    padding: 0 5%;
+    &--brand {
+        font-size:1.5rem
+    }
+}
