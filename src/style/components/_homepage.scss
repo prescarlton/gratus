@@ -1,0 +1,30 @@
+.homepage {
+    @extend .page;
+
+    .gratList {
+        display: flex;
+        width: 100%;
+        padding: 0;
+    }
+
+    .gratList__column {
+
+        background-clip: padding-box;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .homepage {
+        padding: 1rem 20%;
+        h1 {
+            padding-left:0;
+        }
+        // masonry layout with 2rem gutters
+        .gratList {
+            margin-left: -2rem;
+        }
+        .gratList__column {
+            padding-left:2rem;
+        }
+    }
+}

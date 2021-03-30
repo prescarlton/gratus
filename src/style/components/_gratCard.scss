@@ -1,0 +1,50 @@
+.gratCard {
+    display: inline-flex;
+    border-radius: 7px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    background-color: white;
+    width: 30rem;
+    max-width: 100%;
+    min-height: 10rem;
+    margin: 1rem 0;
+    padding: 1rem;
+    position:relative;
+    .gratCard__message {
+        padding-bottom: 3.5rem;
+    }
+    .gratCard__bottom {
+        position:absolute;
+        padding:1rem;
+        bottom:0;
+        left:0;
+        display:flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        width:100%;
+        align-items: center;
+        .gratCard__dayRating {
+            display: flex;
+            .dayRating__dot {
+                margin-right:.15rem;
+                width:1rem; 
+                height:1rem;
+                border-radius: 100%;
+                content:" ";
+                &--good {
+                    @extend .dayRating__dot;
+                    background-color: $green;
+                }
+                &--bad {
+                    @extend .dayRating__dot;
+                    background-color: $orange;
+                }
+                &--ok {
+                    @extend .dayRating__dot;
+                    background-color: $yellow;
+                }
+            }
+            
+        }
+    }
+
+}
