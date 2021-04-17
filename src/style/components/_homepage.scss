@@ -1,6 +1,23 @@
 .homepage {
     @extend .page;
-
+    h1 {
+        text-align: left;
+        width: 100%;
+    }
+    h3 {
+        cursor: pointer;
+        width:100%;
+        text-align: left;
+        transition: .2s all;
+        .highlight {
+            font-weight: bold;
+            font-size:120%;
+            margin-right: .75rem;
+        }
+        &:hover{
+            color:$highlight;
+        }
+    }
     .gratList {
         display: flex;
         width: 100%;
@@ -8,10 +25,18 @@
     }
 
     .gratList__column {
-
         background-clip: padding-box;
     }
+    #timePeriodSelector {
+        border:none;
+        background-color:inherit;
+        font-size:inherit;
+        &:focus {
+            outline:none;
+        }
+    }
 }
+
 
 @media only screen and (min-width: 768px) {
     .homepage {

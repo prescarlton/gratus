@@ -1,0 +1,49 @@
+.modal {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 7px;
+    padding: 1rem;
+    transition: .2s all;
+    .modal--header {
+        margin-bottom:1rem;
+    }
+    .gratInput--wrapper {
+        position: relative;
+        textarea {
+            resize: none;
+            border-radius: 7px;
+            font-family: $body-font;
+            padding: .25rem;
+            width:100%;
+        }
+        .charCount {
+            position: absolute;
+            bottom:0;
+            right:0;
+            padding: .5rem;
+            font-weight: bold;
+            color:gray;
+        }
+    }
+    .modal--footer {
+        margin-top: 1rem;
+        display: flex;
+        justify-content: flex-end;
+        * {
+            margin-left:.5rem;
+        }
+    }
+}
+.ReactModal__Overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(199, 199, 199, 0.75) !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .modal {
+        width: 50%;
+    }
+}

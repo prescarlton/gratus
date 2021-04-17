@@ -22,9 +22,9 @@ const GratCard = (props) => {
         <div className='gratCard'>
             <h2 className='gratCard__message'>{props.message}</h2>
             <div className='gratCard__bottom'>
-                <div className='gratCard__dayRating'>
+                {/* <div className='gratCard__dayRating'>
                     {DayRating(props.dayRating)}
-                </div>
+                </div> */}
                 <h3>{props.date}</h3>
             </div>
         </div>

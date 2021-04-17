@@ -1,6 +1,13 @@
 import GratCard from "../atoms/GratCard";
 import Masonry from 'react-masonry-css';
+import NewGratCard from "../atoms/newGratCard";
+import { useState } from "react";
+import NewGratModal from "../organisms/NewGratModal";
+
 const HomePage = () => {
+
+    const [showNewGratModal, setShowNewGratModal] = useState(false)
+
     const GratList = [
         {
             message: 'grateful for the view on my porch',
@@ -77,24 +84,39 @@ const HomePage = () => {
     const breakpointColumnsObj = {
         default: 2,
         500: 1
-      };
+    };
+
+    const openNewGratModal = () => {
+        setShowNewGratModal(true);
+    }
+
+    const closeNewGratModal = () => {
+        setShowNewGratModal(false);
+    }
 
     return (
-        // <div className='homepage'>
-        //     <h1>Here's what you've been grateful for <span className='highlight' id='timePeriodSelector'>this week.</span></h1>
-        //     <div className='gratList'>
-        //         {GratList.map(grat => <GratCard {...grat} />)}
-        //     </div>
-        // </div>
         <div className='homepage'>
-            <h1>Here's what you've been grateful for <span className='highlight' id='timePeriodSelector'>this week.</span></h1>
+            <h1>Here's what you've been grateful for <select className='highlight' id='timePeriodSelector'>
+                <option>today.</option>
+                <option>this week.</option>
+                <option>this month.</option>
+                <option>this year.</option>
+                <option>all-time</option>
+            </select>
+            </h1>
+            <h3 onClick={openNewGratModal}><span className='highlight focus'>+</span>What are you grateful for today?</h3>
+            
             <Masonry
                 className="gratList"
                 columnClassName="gratList__column"
                 breakpointCols={breakpointColumnsObj}
-                >
+            >
                 {GratList.map(grat => <GratCard {...grat} />)}
             </Masonry>
+            <NewGratModal
+                isOpen={showNewGratModal}
+                closeModal={closeNewGratModal}
+            />
         </div>
     )
 }
