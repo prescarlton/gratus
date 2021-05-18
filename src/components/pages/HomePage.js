@@ -94,6 +94,12 @@ const HomePage = () => {
         setShowNewGratModal(false);
     }
 
+    const cardList = () => {
+        return [
+            (<NewGratCard/>),
+            ...GratList.map(grat => <GratCard {...grat} />)
+        ]
+    }
     return (
         <div className='homepage'>
             <h1>Here's what you've been grateful for <select className='highlight' id='timePeriodSelector'>
@@ -104,19 +110,18 @@ const HomePage = () => {
                 <option>all-time</option>
             </select>
             </h1>
-            <h3 onClick={openNewGratModal}><span className='highlight focus'>+</span>What are you grateful for today?</h3>
-            
+
             <Masonry
                 className="gratList"
                 columnClassName="gratList__column"
                 breakpointCols={breakpointColumnsObj}
             >
-                {GratList.map(grat => <GratCard {...grat} />)}
+                {cardList()}
             </Masonry>
-            <NewGratModal
+            {/* <NewGratModal
                 isOpen={showNewGratModal}
                 closeModal={closeNewGratModal}
-            />
+            /> */}
         </div>
     )
 }
